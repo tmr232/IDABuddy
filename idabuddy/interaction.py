@@ -1,3 +1,6 @@
+import os
+
+
 class Link(object):
     DEFAULTS = dict(color='inherit', text_decoration='None')
 
@@ -16,6 +19,7 @@ class Link(object):
             text=self.text,
             style=';'.join('{}:{}'.format(key.replace('_', '-'), value) for key, value in self.style.iteritems())
         )
+
 
 class Span(object):
     DEFAULTS = dict()
@@ -41,12 +45,14 @@ def yes_no():
 def nxt():
     return Link('Next', href='next', color='blue', text_decoration='underscore')
 
+
 def ok():
     return Link('Ok', href='ok', color='blue', text_decoration='underscore')
 
 
 def ask_next(query):
     return '{query}{br}{next}'.format(**use_defaults(query=query))
+
 
 def ask_ok(query):
     return '{query}{br}{ok}'.format(**use_defaults(query=query))
@@ -63,3 +69,12 @@ def use_defaults(**kwargs):
 
 def ask_yes_no(query):
     return '{query}{br}{yesno}'.format(**use_defaults(query=query))
+
+
+class ImageGetter(object):
+    def __getitem__(self, key):
+        return '<img src="{path}"/>'.format(path=os.path.join(os.path.dirname(__file__), key))
+
+
+def embed_images(phrase):
+    return phrase.format(image=ImageGetter())
