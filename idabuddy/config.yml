@@ -4,7 +4,7 @@ popup:
 
 talkbubble:
   x: 0
-  y: 0
+  y: 80
   stylesheet: |
       QLabel{background-color: ghostwhite;
           border-style: solid;
@@ -23,4 +23,4 @@ talkbubble:
 animation:
   duration: 500
 
-image: avatar/superida.png
+image: avatar/xmasida.png
