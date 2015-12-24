@@ -1,5 +1,16 @@
 # IDABuddy
 
+## What is it?
+
+IDABuddy is a reverse-engineer's best friend. Designed to be everything
+Clippy the Office Assistant was, and more!
+
+IDABuddy will always be there for you. Friendly and helpful while you
+work. Offering tips and friendly chat.
+
+And best of all - since it is open-source, it will never be taken away
+from you!
+
 
 ## Requirements
 
