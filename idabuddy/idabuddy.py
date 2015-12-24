@@ -11,7 +11,9 @@ from interaction import ask_ok
 CONFIG = yaml.load(open(os.path.join(os.path.dirname(__file__), 'config.yml'), 'rb'))
 AUTO_POPUP_TIMEOUT = CONFIG['popup']['timeout']
 POPUP_PROBABILITY = CONFIG['popup']['probability']
-TALKBUBBLE_STYLESHEET = CONFIG['stylesheet']
+TALKBUBBLE_STYLESHEET = CONFIG['talkbubble']['stylesheet']
+TALKBUBBLE_X = CONFIG['talkbubble']['x']
+TALKBUBBLE_Y = CONFIG['talkbubble']['y']
 ANIMATION_DURATION = CONFIG['animation']['duration']
 IDABUDDY_AVATAR_PATH = os.path.join(os.path.dirname(__file__), CONFIG['image'])
 
@@ -99,7 +101,7 @@ class Popup(QtWidgets.QWidget):
         self.slide.initialize()
         self.talk_bubble = TalkBubble(self)
 
-        self.talk_bubble.move(0, 0)
+        self.talk_bubble.move(TALKBUBBLE_X, TALKBUBBLE_Y)
         self.talk_bubble.hide()
         self.slide.move(size_to_point(self.talk_bubble.size()))
 
@@ -130,7 +132,7 @@ class Popup(QtWidgets.QWidget):
             self.talk_bubble.setText(text)
             self.talk_bubble.adjustSize()
             self.talk_bubble.show()
-            self.talk_bubble.move(0, 0)
+            self.talk_bubble.move(TALKBUBBLE_X, TALKBUBBLE_Y)
             self.slide.move(size_to_point(self.talk_bubble.size()))
 
         self.setFixedSize(self.talk_bubble.size() + self.slide.size())
