@@ -1,0 +1,54 @@
+{
+  "basic": [
+    [
+      "Hello, World!",
+      "I am IDABuddy.\nI will assist you in all your reverse-engineering efforts."
+    ],
+    [
+      "You're not too good at this, are you?",
+      "Did you consider switching to a different line of work?"
+    ],
+    [
+      "Remember to save your work!"
+    ],
+    [
+      "I put the fun in functions, and the ass in assembly!"
+    ],
+    [
+      "If at first you don't succeed",
+      "Try, try again."
+    ],
+    [
+      "If at first you don't succeed",
+      "Give up."
+    ],
+    [
+      "Don't Panic."
+    ],
+    [
+      "So nice to see you again."
+    ],
+    [
+      "Don't drink and code."
+    ],
+    [
+      "It's not about the opcodes."
+    ],
+    [
+      "Don't try, don't fail."
+    ],
+    [
+      "Programmers, huh?"
+    ],
+    [
+      "Use the Force, Luke!"
+    ],
+    [
+      "There is no spoon."
+    ]
+  ],
+  "address": [
+    "You should probably have a look at {}",
+    "This is not a good place. {} is better."
+  ]
+}
