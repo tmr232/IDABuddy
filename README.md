@@ -32,4 +32,4 @@ Visual settings are stored in `config.yml`.
 You can change the `stylesheet` to change the looks of the talk bubble,
 or change the `image` to use a different buddy image.
 
-![](help.png)
+<img style="float: right;" src="help.png">
