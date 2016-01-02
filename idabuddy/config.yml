@@ -1,10 +1,13 @@
 popup:
+  # Once every `timeout`, there is a `probablility` probability that IDABuddy will appear.
   timeout : 10000
   probability : 0.2
 
 talkbubble:
+  # Offsets of the talkbubble. Positive means down and right. Negative is up and left.
   x: 0
   y: 0
+  # The style for the talkbubble.
   stylesheet: |
       QLabel{background-color: ghostwhite;
           border-style: solid;
@@ -21,8 +24,13 @@ talkbubble:
       }
 
 animation:
+  # Duration of the animation (slide-in, slide-out)
   duration: 500
 
+# The avatar image to use.
 image: avatar/superida.png
 
-override: ~
+# Specify an override to replace desired settings.
+# This is useful for loading avatar styles from presets.
+# Set to `~` (without the backticks) to not load an override.
+override: avatar/clippy.yml
