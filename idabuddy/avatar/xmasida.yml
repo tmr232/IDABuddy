@@ -1,10 +1,6 @@
-popup:
-  timeout : 10000
-  probability : 0.2
-
 talkbubble:
   x: 0
-  y: 0
+  y: 80
   stylesheet: |
       QLabel{background-color: ghostwhite;
           border-style: solid;
@@ -20,9 +16,4 @@ talkbubble:
           color:midnightblue;
       }
 
-animation:
-  duration: 500
-
-image: avatar/superida.png
-
-override: ~
+image: avatar/xmasida.png
