@@ -17,6 +17,15 @@ TALKBUBBLE_Y = CONFIG['talkbubble']['y']
 ANIMATION_DURATION = CONFIG['animation']['duration']
 IDABUDDY_AVATAR_PATH = os.path.join(os.path.dirname(__file__), CONFIG['image'])
 
+TALKBUBBLE_X_MOVE = max(TALKBUBBLE_X, 0)
+TALKBUBBLE_Y_MOVE = max(TALKBUBBLE_Y, 0)
+
+
+def get_extra_size():
+    extra_width = - min(TALKBUBBLE_X, 0)
+    extra_height = - min(TALKBUBBLE_Y, 0)
+    return QtCore.QSize(extra_width, extra_height)
+
 
 # TODO: use a layout instead of those weird positioning tricks.
 
@@ -96,16 +105,16 @@ class Popup(QtWidgets.QWidget):
         self.image_label = QtWidgets.QLabel(self.slide)
         self.image_label.setPixmap(self.pm)
 
-        self.image_label.setFixedSize(self.pm.size())
+        self.image_label.setFixedSize(self.pm.size() + get_extra_size())
         self.image_label.setAlignment(QtCore.Qt.AlignTop)
         self.slide.initialize()
         self.talk_bubble = TalkBubble(self)
 
-        self.talk_bubble.move(TALKBUBBLE_X, TALKBUBBLE_Y)
+        self.talk_bubble.move(TALKBUBBLE_X_MOVE, TALKBUBBLE_Y_MOVE)
         self.talk_bubble.hide()
         self.slide.move(size_to_point(self.talk_bubble.size()))
 
-        self.setFixedSize(self.talk_bubble.size() + self.slide.size())
+        self.setFixedSize(self.talk_bubble.size() + self.slide.size() + get_extra_size())
 
         connect_method_to_signal(self.talk_bubble, 'linkActivated(QString)', self.linkActivatedHandler)
         self._handlers = {}
@@ -132,10 +141,11 @@ class Popup(QtWidgets.QWidget):
             self.talk_bubble.setText(text)
             self.talk_bubble.adjustSize()
             self.talk_bubble.show()
-            self.talk_bubble.move(TALKBUBBLE_X, TALKBUBBLE_Y)
-            self.slide.move(size_to_point(self.talk_bubble.size()))
+            self.talk_bubble.move(TALKBUBBLE_X_MOVE, TALKBUBBLE_Y_MOVE)
+            self.slide.move(size_to_point(self.talk_bubble.size() + get_extra_size()))
 
-        self.setFixedSize(self.talk_bubble.size() + self.slide.size())
+        print get_extra_size()
+        self.setFixedSize(self.talk_bubble.size() + self.slide.size() + get_extra_size())
 
     def exit(self):
         self.setText(None)
