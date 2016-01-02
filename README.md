@@ -42,11 +42,8 @@ Visual settings are stored in `config.yml`, as well as documentation.
 
 #### Available avatars:
 
-<img width="200" src="idabuddy/avatar/clippy.png">
+<img width="200" src="idabuddy/avatar/Clippy.png">
 <img width="200" src="idabuddy/avatar/superida.png">
 <img width="200" src="idabuddy/avatar/xmasida.png">
 
 Or create your own!
-
-
-<img align="right" src="help.png">
