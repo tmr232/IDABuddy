@@ -1,0 +1,19 @@
+talkbubble:
+  x: 200
+  y: -50
+  stylesheet: |
+      QLabel{background-color: #FFFECB;
+          border-style: solid;
+          border-width: 1px;
+          border-radius: 10px;
+          border-color: black;
+          font: 10pt;
+          min-width: 10em;
+          padding: 30px;
+          padding-top:30px;
+          font-family: "Microsoft Sans", sans-serif;
+          font-size: 20px;
+          color:midnightblue;
+      }
+
+image: avatar/clippy.png
