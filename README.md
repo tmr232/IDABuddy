@@ -47,3 +47,8 @@ Visual settings are stored in `config.yml`, as well as documentation.
 <img width="200" src="idabuddy/avatar/xmasida.png">
 
 Or create your own!
+
+
+## In The Press
+
+IDABuddy was presented in a lightning talk at 32c3. Watch the video [here](https://youtu.be/zMp2jAHquns?t=1h33m25s).
