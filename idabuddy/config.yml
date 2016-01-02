@@ -1,21 +1,21 @@
 popup:
-  timeout : 10000
+  timeout : 1
   probability : 0.2
 
 talkbubble:
   x: 0
   y: 80
   stylesheet: |
-      QLabel{background-color: #FFFECB;
+      QLabel{background-color: ghostwhite;
           border-style: solid;
-          border-width: 1px;
-          border-radius: 10px;
-          border-color: black;
-          font: 10pt;
+          border-width: 5px;
+          border-radius: 40px;
+          border-color: dodgerblue;
+          font: bold 14px;
           min-width: 10em;
           padding: 30px;
           padding-top:30px;
-          font-family: "Microsoft Sans", sans-serif;
+          font-family: Comic Sans MS;
           font-size: 20px;
           color:midnightblue;
       }
@@ -24,3 +24,5 @@ animation:
   duration: 500
 
 image: avatar/xmasida.png
+
+override: avatar/clippy.yml

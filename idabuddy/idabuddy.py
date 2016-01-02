@@ -2,13 +2,33 @@ import os
 import random
 import yaml
 from sark.qt import QtCore, QtWidgets, QtGui, connect_method_to_signal
-
+import collections
 import idaapi
 
 idaapi.require('interaction')
 from interaction import ask_ok
 
 CONFIG = yaml.load(open(os.path.join(os.path.dirname(__file__), 'config.yml'), 'rb'))
+
+
+def update_recursive(d, u):
+    '''
+    Taken from http://stackoverflow.com/a/3233356/3337893
+    '''
+    for k, v in u.iteritems():
+        if isinstance(v, collections.Mapping):
+            r = update_recursive(d.get(k, {}), v)
+            d[k] = r
+        else:
+            d[k] = u[k]
+    return d
+
+
+_CONFIG_OVERRIDE = CONFIG.get('override', None)
+if _CONFIG_OVERRIDE:
+    config_override = yaml.load(open(os.path.join(os.path.dirname(__file__), _CONFIG_OVERRIDE), 'rb'))
+    update_recursive(CONFIG, config_override)
+
 AUTO_POPUP_TIMEOUT = CONFIG['popup']['timeout']
 POPUP_PROBABILITY = CONFIG['popup']['probability']
 TALKBUBBLE_STYLESHEET = CONFIG['talkbubble']['stylesheet']
@@ -105,7 +125,7 @@ class Popup(QtWidgets.QWidget):
         self.image_label = QtWidgets.QLabel(self.slide)
         self.image_label.setPixmap(self.pm)
 
-        self.image_label.setFixedSize(self.pm.size() + get_extra_size())
+        self.image_label.setFixedSize(self.pm.size())
         self.image_label.setAlignment(QtCore.Qt.AlignTop)
         self.slide.initialize()
         self.talk_bubble = TalkBubble(self)
@@ -144,7 +164,6 @@ class Popup(QtWidgets.QWidget):
             self.talk_bubble.move(TALKBUBBLE_X_MOVE, TALKBUBBLE_Y_MOVE)
             self.slide.move(size_to_point(self.talk_bubble.size() + get_extra_size()))
 
-        print get_extra_size()
         self.setFixedSize(self.talk_bubble.size() + self.slide.size() + get_extra_size())
 
     def exit(self):
