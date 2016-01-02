@@ -42,9 +42,9 @@ Visual settings are stored in `config.yml`, as well as documentation.
 
 #### Available avatars:
 
-<img width=200 src="avatar/clippy.png">
-<img width=200 src="avatar/superida.png">
-<img width=200 src="avatar/xmasida.png">
+<img width="50%" height="50%" src="idabuddy/avatar/clippy.png">
+<img width="50%" height="50%" src="idabuddy/avatar/superida.png">
+<img width="50%" height="50%" src="idabuddy/avatar/xmasida.png">
 
 Or create your own!
 
