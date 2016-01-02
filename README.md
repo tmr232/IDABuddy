@@ -38,9 +38,15 @@ to put the address to jump to.
 
 ### How do I look?
 
-Visual settings are stored in `config.yml`.
+Visual settings are stored in `config.yml`, as well as documentation.
 
-You can change the `stylesheet` to change the looks of the talk bubble,
-or change the `image` to use a different buddy image.
+#### Available avatars:
+
+<img width=200 src="avatar/clippy.png">
+<img width=200 src="avatar/superida.png">
+<img width=200 src="avatar/xmasida.png">
+
+Or create your own!
+
 
 <img align="right" src="help.png">
