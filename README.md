@@ -51,4 +51,4 @@ Or create your own!
 
 ## In The Press
 
-IDABuddy was presented in a lightning talk at 32c3. Watch the video [here](https://youtu.be/zMp2jAHquns?t=1h33m25s).
+IDABuddy was presented in a lightning talk at 32c3. Watch the video [here](https://youtu.be/4lLL9SkLdi4?t=1h33m25s).
